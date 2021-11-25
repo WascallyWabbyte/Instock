@@ -1,0 +1,110 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/colors' as *;
+
+.page-heading-bar {
+    padding: 32px 24px 24px;
+    border-bottom: 1px solid $color-borders-diverders;
+    @include tablet {
+        padding: 32px 32px 24px;
+        display: flex;
+        justify-content: space-between;
+        border: none;
+        height: 108px;
+        box-sizing: border-box;
+    }
+    &--alternate{
+        @extend .page-heading-bar;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid $color-borders-diverders;
+    }
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__heading-wrapper {
+        display: flex;
+        
+    }
+    &__back-icon {
+        width: 16px;
+        margin-bottom: 16px;
+        margin-right: 16px;
+        @include tablet {
+            margin-bottom: 0;
+        }
+    }
+    &__link {
+        display: flex;
+    }
+
+    &__heading {
+        margin-bottom: 16px;
+        @include tablet {
+            margin: 0;
+        }
+    }
+
+    &__search-and-add {
+        @include tablet {
+            display: flex;
+            align-self: center;
+        } 
+    }
+    &__search {
+        @include input;
+        margin-bottom: 0.75rem;
+        width: 100%;
+        padding-left: 1rem;
+        box-sizing: border-box;
+    
+        @include tablet {
+          width: 12rem;
+          margin: 0 0.5rem;
+        }
+    }
+    &__add-btn {
+        @include cta-add;
+        border: none;
+        color: $color-white;
+        width: 100%;
+    
+        @include tablet {
+          width: 12rem;
+          margin: 0 0.5rem;
+        }
+    }
+    &__edit-btn{
+        display: none;
+        color: $color-white;
+        @include tablet {
+            display: flex;
+            align-items: center;
+            @include cta-add;
+            border: none;
+        }
+
+        &--mobile {
+            width: 36px;
+            height: 36px;
+            background-color: $color-blue-cta;
+            border-radius: 50%;
+            border: none;
+            
+            @include tablet {
+                display: none;
+            }
+        }
+    }
+
+    &__btn-icon{
+        width: 20px;
+        height: 20px;
+        margin-right: 5px;
+        &--mobile{
+            @extend .page-heading-bar__btn-icon;
+            margin: 0;
+        }
+    }
+}

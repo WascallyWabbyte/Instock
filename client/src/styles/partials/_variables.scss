@@ -1,0 +1,15 @@
+$padding: 1rem;
+
+$padding-xs: $padding * 0.25;
+$padding-small: $padding * 0.5;
+$padding-medium: $padding * 0.75;
+$padding-large: $padding * 1.5;
+$padding-xl: $padding * 1.75;
+
+$margin: 1rem; // mobile margin
+$margin-small: $margin * 0.625;
+$margin-medium: $margin * 1.5;
+$margin-xl: $margin * 2; // tablet margin
+
+$tablet: 768px;
+$desktop: 1280px;

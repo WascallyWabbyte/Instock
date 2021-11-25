@@ -1,0 +1,161 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+
+.warehouse-details {
+  position: absolute;
+  font-family: $font-stack;
+  left: 4.27%;
+  right: 4.27%;
+  top: 92px;
+  background: #ffffff;
+  box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+  border-radius: 3px;
+
+  @include tablet {
+    max-width: 63.75rem;
+    margin: 0 auto;
+  }
+
+  @include desktop {
+    margin: 0 auto;
+  }
+
+  &__top-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border-bottom: 1px solid $color-borders-diverders;
+    height: 6.75rem;
+  }
+  &__name-wrapper {
+    display: flex;
+    align-items: center;
+  }
+  &__arrow {
+    margin-left: $margin;
+    margin-right: $margin-small;
+    vertical-align: middle;
+    width: 1rem;
+    height: 1rem;
+
+    @include tablet {
+      vertical-align: bottom;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    @include desktop {
+      margin-left: $margin-xl;
+    }
+  }
+  &__header {
+    @include MH1;
+  }
+  &__edit-button {
+    display: none;
+
+    @include tablet {
+      display: block;
+      @include cta-edit;
+      background-image: url("../../assets/images/edit-white-24px.svg");
+      background-repeat: no-repeat;
+      background-position: 10px;
+      background-size: 20px;
+      margin-right: $margin;
+      width: 5rem;
+      margin-right: $margin-xl;
+    }
+  }
+  &__edit-button-mobile {
+    @include cta-edit;
+    background-image: url("../../assets/images/edit-white-24px.svg");
+    background-repeat: no-repeat;
+    background-position: 8px;
+    background-size: 20px;
+    margin-right: $margin;
+    width: 2.25rem;
+
+    @include tablet {
+      display: none;
+    }
+  }
+  &__bottom-wrapper {
+    display: flex;
+    flex-direction: column;
+    // margin: 0 $margin $margin;
+    padding: 0 $padding $padding 1.5rem;
+    border-bottom: 1px solid $color-borders-diverders;
+
+    @include tablet {
+      flex-direction: row;
+      border-bottom: none;
+      padding-top: $padding;
+    }
+  }
+  &__address-container {
+    width: 50%;
+
+    @include tablet {
+      border-right: 1px solid $color-borders-diverders;
+      width: 60%;
+      margin-left: $margin;
+    }
+  }
+  &__address-header {
+    @include MH4;
+    margin-bottom: 0.25rem;
+    margin-top: $margin;
+
+    @include tablet {
+      @include H4;
+      margin: 0;
+    }
+  }
+  &__address {
+    @include MP2;
+    margin: 0;
+
+    @include tablet {
+      @include P2;
+    }
+  }
+  &__address-city {
+    @extend .warehouse-details__address;
+  }
+  &__contact-wrapper {
+    display: flex;
+    @include tablet {
+      margin-left: $margin-xl;
+      display: flex;
+      width: 100%;
+    }
+  }
+  &__contact-container {
+    width: 52%;
+
+    @include tablet {
+      width: 45%;
+    }
+  }
+  &__contact-name-header {
+    @extend .warehouse-details__address-header;
+  }
+  &__contact-name {
+    @extend .warehouse-details__address;
+  }
+  &__contact-position {
+    @extend .warehouse-details__address;
+  }
+  &__contact-information-header {
+    @extend .warehouse-details__address-header;
+  }
+  &__contact-phone {
+    @extend .warehouse-details__address;
+  }
+  &__contact-email {
+    @extend .warehouse-details__address;
+  }
+}

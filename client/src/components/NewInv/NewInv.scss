@@ -1,0 +1,225 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+
+body {
+  font-family: $font-stack;
+
+  @include tablet {
+    font-size: 0.875rem;
+  }
+}
+
+.form-box {
+    margin: auto;
+    background-color: white;
+    font-family: $font-stack;
+    position: absolute;
+    left: 4.27%;
+    right: 4.27%;
+    top: 11.79%;
+    bottom: 8.32%;
+    box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+    border-radius: 3px;
+    @include tablet {
+      bottom: -10.68%;
+    }
+    @include desktop {
+      bottom: 16.38%;
+    }
+    
+  &__title {
+    font-size: 1.75rem;
+    padding: 1rem;
+    @include desktop {
+      font-size: 2rem;
+      padding-left: 3rem;
+    }
+    &--secondary {
+      font-size: 1.25rem;
+      margin: 0 0 1rem 0;
+    }
+    &--contact {
+      padding: 1rem 0 1rem 0;
+      @include tablet {
+        padding: 0;
+      }
+    }
+  }
+  &__icon {
+    vertical-align: middle;
+    padding-right: 0.5rem;
+  }
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    &--second {
+      border-top: 1px solid #BDC5D5;
+      @include tablet {
+        border-top: 0;
+        border-left: 1px solid #BDC5D5;
+        padding-left: 0.6rem;
+      }
+      @include desktop {
+
+        padding-left: 5rem;
+      }
+    }
+    &--last {
+      @include tablet {
+        margin-left: auto;
+      }
+      @include tablet {
+        margin-right: 3rem;
+      }
+    }
+  }
+}
+.form {
+  padding: 1.5rem;
+  border-top: 1px solid #BDC5D5;
+  display: flex;
+  flex-direction: column;
+  @include tablet {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  @include desktop {
+    justify-content: space-around;
+  }
+}
+.divider {
+  border-top: 1px solid #BDC5D5;
+  margin: 0 -1.5rem 0 -1.5rem;
+}
+.input {
+  // border: 1px solid #959BA7;
+  // height: 2.25rem;
+  // width: 18.4375rem;
+  // border-radius: 1.25rem;
+  // margin-bottom: 1rem;
+  // padding-left: 1rem;
+  // font-size: 0.8125rem;
+  @include input;
+  @include desktop {
+    width: 26.8125rem;
+    font-size: 0.875rem;
+  }
+
+  &--error {
+    @extend .input;
+    border-color: $color-outofstock-red;
+  }
+}
+
+.warehouse-form {
+
+  &__input {
+    @include input;
+    &--error {
+      @extend .warehouse-form__input;
+      border-color: $color-outofstock-red;
+    }
+    @include desktop {
+      width: 26.8125rem;
+      font-size: 0.875rem;
+    }
+  }
+
+  &__warning {
+    color: $color-outofstock-red;
+    @include MP3;
+
+    @include tablet {
+        @include P3;
+    }
+
+    &--none {
+        display: none;
+    }
+    &--error {
+        @extend .warehouse-form__warning;
+        display: inherit;
+    }
+  }
+}
+
+label {
+  display: inline-block;
+  margin: 0.5rem 0;
+  font-size: 0.8125rem;
+  @include tablet {
+    font-weight: 600;
+  }
+  @include desktop {
+    font-size: 0.875rem;
+  }
+}
+.button {
+    font-size: 0.8125rem;
+    padding: 0.4375rem;
+    border-radius: 1.25rem;
+    width: 8.6875rem;
+    height: 2.25rem;
+    border: none;
+    margin-top: 1.5625rem;
+    &--cancel {
+        border: 1px solid #BDC5D5;
+        background-color: white;
+    }
+    &--submit {
+        color: white;
+        background-color: #2E66E5;
+        @include tablet {
+          margin-left: 1rem;
+        }
+    }
+  }
+
+.addInv {
+  color: $color-primary-text;
+
+  &__show {
+    display: block;
+    
+    &--input {
+      border: 1px solid #959BA7;
+      height: 2.25rem;
+      width: 18.4375rem;
+      border-radius: 1.25rem;
+      margin-bottom: 1rem;
+      padding-left: 1rem;
+      font-size: 0.8125rem;
+      display: block;
+
+      @include desktop {
+        width: 26.8125rem;
+        font-size: 0.875rem;
+      }
+    }
+  }
+
+  &__hide {
+    display: none;
+
+    &--input {
+      border: 1px solid #959BA7;
+      height: 2.25rem;
+      width: 18.4375rem;
+      border-radius: 1.25rem;
+      margin-bottom: 1rem;
+      padding-left: 1rem;
+      font-size: 0.8125rem;
+      display: none;
+      
+      @include desktop {
+        width: 26.8125rem;
+        font-size: 0.875rem;
+      }
+    }
+  }
+
+
+}

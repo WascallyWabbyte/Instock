@@ -1,0 +1,100 @@
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/global' as *;
+@use '../../styles/partials/mixins' as *;
+
+.inventory-item {
+  position: relative;
+  display: flex;
+  border-bottom: 1px solid $color-borders-diverders;
+  padding: 0 24px 64px;
+
+  @include tablet {
+    height: 50px;
+    padding: 0 32px 0;
+  }
+
+  &__info-column {
+    width: 50%;
+    @include tablet {
+      display: flex;
+      vertical-align: middle;
+    }
+  }
+
+  &__chevron-icon {
+    vertical-align: middle;
+  }
+
+  &__heading {
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__data {
+    align-self: center;
+    &--item {
+      @extend .inventory-item__data;
+      @include tablet {
+        width: 22vw;
+      }
+    }
+    &--category {
+      @extend .inventory-item__data;
+      width: 25vw;
+    }
+    &--status {
+      @extend .inventory-item__data;
+      @include tablet {
+        width: 20vw;
+      }
+    }
+    &--qty {
+      @extend .inventory-item__data;
+      width: 10vw;
+    }
+    &--warehouse {
+      @extend .inventory-item__data;
+      width: 20vw;
+    }
+  }
+
+  &__link {
+    // display: flex;
+    @include text-link;
+    text-decoration: none;
+  }
+
+  &__status {
+    @extend .inventory-item__data;
+
+    &--instock {
+      @extend .inventory-item__status;
+      @include tag-instock;
+      width: fit-content;
+    }
+    &--outstock {
+      @extend .inventory-item__status;
+      @include tag-out-of-stock;
+      width: fit-content;
+    }
+  }
+
+  &__delete-icon {
+    position: absolute;
+    bottom: 27px;
+    @include tablet {
+      right: 4vw;
+      bottom: 16px;
+    }
+  }
+  &__edit-icon {
+    position: absolute;
+    bottom: 27px;
+    right: 16px;
+    @include tablet {
+      right: 1vw;
+      bottom: 16px;
+    }
+  }
+}

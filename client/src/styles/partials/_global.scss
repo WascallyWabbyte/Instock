@@ -1,0 +1,31 @@
+@use '../partials/typography' as *;
+@use '../partials/mixins' as *;
+@use '../partials/colors' as *;
+
+
+body {
+    font-family: $font-stack;
+    margin: 0;
+}
+h1 {
+    font-size: 28px;
+    line-height: 36px;
+    color: $color-primary-text;
+    margin: 0;
+    @include tablet {
+        font-size: 1.75rem;
+        line-height: 2.25rem;
+        font-weight: 600;
+    }
+}
+
+h4 {
+    font-size: 11px;
+    line-height: 16px;
+    color: $color-placeholder-table-text;
+    margin: 0.5rem 0;
+    @include tablet {
+        font-size: 12px;
+        line-height: 18px;
+    }
+}

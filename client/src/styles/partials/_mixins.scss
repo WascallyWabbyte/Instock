@@ -1,0 +1,336 @@
+@use "variables" as *;
+@use "colors" as *;
+@use "typography" as *;
+
+@mixin default_page_style {
+    position: absolute;
+    left: 16px;
+    right: 16px;
+    top: 136px;
+    background: $color-white;
+    box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+    border-radius: 3px;
+    max-width: 24.25rem;
+    margin: 0 auto;
+    
+    @include tablet {
+      left: 32px;
+      right: 32px;
+      top: 92px;
+      max-width: 63.75rem;
+      margin: 0 auto;
+    }
+}
+@mixin list {
+  list-style-type: none;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+}
+
+@mixin tablet {
+  @media (min-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $desktop) {
+    @content;
+  }
+}
+
+@mixin cta-add {
+  background-color: $color-blue-cta;
+  height: 2.25rem;
+  // margin-top: auto;
+  // width: inherit;
+  border-radius: 1.25rem;
+  text-decoration: none;
+  border: none;
+  color: $color-white;
+  @include MH3;
+
+  @include tablet {
+    padding: 0 $padding;
+    height: 2.375rem;
+    @include H3;
+  }
+  &:hover {
+    background-color: $color-primary-text;
+  }
+}
+
+@mixin cta-edit {
+  background-color: $color-blue-cta;
+  height: 2.25rem;
+  margin-top: auto;
+  width: inherit;
+  border-radius: 1.25rem;
+  text-decoration: none;
+  border: none;
+  color: $color-white;
+  @include MH3;
+
+  @include tablet {
+    padding: 0 2rem;
+    height: 2.375rem;
+    @include H3;
+  }
+  &:hover {
+    background-color: $color-primary-text;
+  }
+}
+
+@mixin cta-cancel {
+  background-color: $color-white;
+  color: $color-borders-diverders;
+  height: 2.25rem;
+  margin-top: auto;
+  width: inherit;
+  border: 1px solid $color-borders-diverders;
+  border-radius: 1.25rem;
+  text-decoration: none;
+  @include MH3;
+
+  @include tablet {
+    padding: 0 $padding;
+    height: 2.375rem;
+    @include H3;
+  }
+  &:hover {
+    color: $color-blue-cta;
+    border: 1px solid $color-blue-cta;
+  }
+}
+
+@mixin cta-delete {
+  background-color: $color-outofstock-red;
+  color: $color-white;
+  height: 2.25rem;
+  margin-top: auto;
+  width: inherit;
+  border-radius: 1.25rem;
+  text-decoration: none;
+  @include MH3;
+
+  @include tablet {
+    padding: 0 $padding;
+    height: 2.375rem;
+    @include H3;
+  }
+  &:hover {
+    color: $color-blue-cta;
+    border: 1px solid $color-blue-cta;
+  }
+}
+
+@mixin text-link {
+  color: $color-blue-cta;
+  @include MH3;
+
+  @include tablet {
+    @include H3;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+@mixin input {
+  height: 2.25rem;
+  // width: inherit;
+  border-radius: 1.25rem;
+  color: $color-primary-text;
+  border: 1px solid $color-borders-diverders;
+  padding: 0 16px;
+  @include MP2;
+  &::placeholder{
+    color: $color-borders-diverders;
+  }
+
+  &:focus {
+    outline: none;
+    border: 1px solid $color-blue-cta;
+    color: $color-primary-text;
+  }
+
+  @include tablet {
+    height: 2.375rem;
+    padding: 0 $padding;
+    @include P2;
+  }
+}
+
+@mixin dropdown {
+  height: 2.25rem;
+  width: inherit;
+  border-radius: 1.25rem;
+  color: $color-borders-diverders;
+  border: 1px solid $color-borders-diverders;
+  background-image: "../assets/images/arrow_drop_down-24px.svg";
+  background-repeat: no-repeat;
+  background-position: 10px;
+  @include MP2;
+
+  &:active {
+    outline: $color-blue-cta;
+    color: $color-primary-text;
+  }
+
+  @include tablet {
+    height: 2.375rem;
+    padding: 0 $padding;
+    @include P2;
+  }
+}
+
+@mixin search {
+  height: 2.25rem;
+  width: inherit;
+  border-radius: 1.25rem;
+  color: $color-borders-diverders;
+  border: 1px solid $color-borders-diverders;
+  background-image: "../assets/images/search-24px.svg";
+  background-repeat: no-repeat;
+  background-position: 10px;
+  @include MP2;
+
+  &:active {
+    outline: $color-blue-cta;
+    color: $color-primary-text;
+  }
+
+  @include tablet {
+    height: 2.375rem;
+    padding: 0 $padding;
+    @include P2;
+  }
+}
+
+@mixin tag-instock {
+  height: 1.5rem;
+  padding: 0 $padding-small;
+
+  width: inherit;
+  background-color: rgba(21, 132, 99, 0.07);
+  color: $color-instock-green;
+  border-radius: 1.25rem;
+  @include MH4;
+  line-height: 1.5rem;
+
+  @include tablet {
+    height: 1.625rem;
+    @include H4;
+    line-height: 1.5rem;
+  }
+}
+
+@mixin tag-out-of-stock {
+  height: 1.5rem;
+  padding: 0 $padding-small;
+  line-height: 1.5rem;
+  width: inherit;
+  background-color: rgba(201, 69, 21, 0.07);
+  color: $color-outofstock-red;
+  border-radius: 1.25rem;
+  @include MH4;
+  line-height: 1.5rem;
+
+  @include tablet {
+    height: 1.625rem;
+    @include H4;
+    line-height: 1.5rem;
+  }
+}
+
+@mixin error {
+  color: $color-outofstock-red;
+  @include MP3;
+
+  @include tablet {
+    @include P3;
+  }
+}
+
+// TYPOGRAPHY MIXINS
+
+// MOBILE
+@mixin MH1 {
+  font-size: 1.75rem;
+  line-height: 2.25rem;
+  font-weight: 600;
+}
+
+@mixin MH2 {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+}
+
+@mixin MH3 {
+  font-size: 0.813rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+}
+
+@mixin MH4 {
+  font-size: 0.688rem;
+  line-height: 1rem;
+  font-weight: 600;
+}
+
+@mixin MP1 {
+  font-size: 0.938rem;
+  line-height: 1.625rem;
+}
+
+@mixin MP2 {
+  font-size: 0.813rem;
+  line-height: 1.25rem;
+}
+
+@mixin MP3 {
+  font-size: 0.688rem;
+  line-height: 1rem;
+}
+
+// TABLET / DESKTOP
+@mixin H1 {
+  font-size: 2rem;
+  line-height: 2.5rem;
+  font-weight: 600;
+}
+
+@mixin H2 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 600;
+}
+
+@mixin H3 {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 600;
+}
+
+@mixin H4 {
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  font-weight: 600;
+}
+
+@mixin P1 {
+  font-size: 1rem;
+  line-height: 1.75rem;
+}
+
+@mixin P2 {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+}
+
+@mixin P3 {
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+}

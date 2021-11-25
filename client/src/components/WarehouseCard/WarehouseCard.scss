@@ -1,0 +1,133 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+
+body {
+  font-family: $font-stack;
+
+  @include tablet {
+    font-size: 0.875rem;
+  }
+}
+
+a {
+  text-decoration: none;
+
+  &:visited {
+    color: inherit;
+  }
+}
+
+p {
+  margin: 0;
+}
+
+.whCard {
+  &__entry {
+    &:hover {
+      background-color: rgba(46, 102, 230, 0.07);
+    }
+
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 1rem 0;
+      border-bottom: 1px solid $color-borders-diverders;
+    }
+  }
+
+  &__info-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 1rem;
+
+    @include tablet {
+      padding: 0;
+      width: 88%;
+    }
+  }
+
+  &__row-sec {
+    width: 49%;
+
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      justify-content: space-evenly;
+    }
+  }
+
+  &__ctnr {
+    @include tablet {
+      width: 42%;
+    }
+  }
+
+  &__card-hdr {
+    margin: 0;
+    color: $color-placeholder-table-text;
+    font-weight: 600;
+    font-size: 0.6875rem;
+    line-height: 1rem;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__card-bdy {
+    margin: 0;
+    color: $color-primary-text;
+    font-size: 0.6875rem;
+    line-height: 1rem;
+    margin: 0.5rem 0 1rem 0;
+    height: 1.25rem;
+
+    @include tablet {
+      margin: 0;
+    }
+  }
+
+  &__card-bdy-ctnr {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  &__card-bdy-name {
+    display: flex;
+  }
+
+  &__card-name {
+    @include MH4;
+    color: $color-blue-cta;
+    line-height: initial;
+
+    @include tablet {
+      @include H4;
+      line-height: initial;
+    }
+  }
+
+  &__card-icon-ctnr {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid $color-borders-diverders;
+    padding: 0 1rem;
+
+    @include tablet {
+      border-bottom: none;
+      padding: none;
+      width: 8%;
+    }
+  }
+
+  @include tablet {
+    justify-content: flex-end;
+  }
+}

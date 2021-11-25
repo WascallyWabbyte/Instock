@@ -1,0 +1,90 @@
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/global' as *;
+
+.warehouse-form {
+    display: flex;
+    flex-direction: column;
+    @include tablet {
+        flex-direction: row;
+    }
+
+    &__input {
+        @include input;
+        &--error {
+            @extend .warehouse-form__input;
+            border-color: $color-outofstock-red;
+        }
+    }
+
+    &__section {
+        display: flex;
+        flex-direction: column;
+        padding: 0 24px 24px;
+        @include tablet {
+            margin: 16px 0;
+            width: 50%;
+        }
+
+        &:first-child {
+            border-bottom: 1px solid $color-borders-diverders;
+            @include tablet {
+                border-bottom: none;
+                border-right: 1px solid $color-borders-diverders;
+            }
+        }
+    }
+
+    &__section-header {
+        margin: 16px 0;
+        @include tablet {
+            margin: 0;
+        }
+    }
+
+    &__warning {
+        color: $color-outofstock-red;
+        @include MP3;
+
+        @include tablet {
+            @include P3;
+        }
+
+        &--none {
+            display: none;
+        }
+        &--error {
+            @extend .warehouse-form__warning;
+            display: inherit;
+        }
+    }
+    
+    &__submit-buttons {
+        display: flex;
+        gap: 16px;
+        padding: 16px 24px;
+        background-color: $color-background-light;
+        @include tablet {
+            justify-content: flex-end;
+        }
+    }
+
+    &__cancel{
+        @include cta-cancel;
+        width: 50%;
+        @include tablet {
+            width: auto;
+            padding: 0 16px;
+        }
+    }
+
+    &__save {
+        @include cta-edit;
+        width: 50%;
+        @include tablet {
+            width: auto;
+            padding: 0 16px;
+        }
+    }
+}

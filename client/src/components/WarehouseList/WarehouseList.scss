@@ -1,0 +1,184 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+
+body {
+  font-family: $font-stack;
+
+  @include tablet {
+    font-size: 0.875rem;
+  }
+}
+
+.whlist {
+  &__wrap {
+    position: absolute;
+    font-family: $font-stack;
+    left: 4.27%;
+    right: 4.27%;
+    top: 15.53%;
+    background: $color-white;
+    box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+    border-radius: 3px;
+    max-width: 24.25rem;
+    margin: 0 auto;
+
+    @include tablet {
+      top: 92px;
+      max-width: 63.75rem;
+      margin: 0 auto;
+    }
+  }
+
+  &__hdr-sec {
+    padding: 2rem 1rem;
+    border-bottom: 1px solid $color-borders-diverders;
+
+    @include tablet {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border: none;
+    }
+  }
+
+  &__hdr-title {
+    margin: 0 0 1rem;
+    @include MH1;
+
+    @include tablet {
+      margin: 0;
+      @include H1;
+    }
+  }
+
+  &__func-ctnr {
+    display: none;
+
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  &__search {
+    @include input;
+    margin-bottom: 0.75rem;
+    width: 100%;
+    padding-left: 1rem;
+    box-sizing: border-box;
+
+    @include tablet {
+      width: 12rem;
+      margin: 0 0.5rem;
+    }
+  }
+
+  &__add-btn {
+    @include cta-add;
+    border: none;
+    color: $color-white;
+    width: 100%;
+
+    @include tablet {
+      width: 12rem;
+      margin: 0 0.5rem;
+    }
+  }
+}
+
+.whHeaders {
+  display: none;
+
+  @include tablet {
+    display: flex;
+  }
+}
+
+.whHeader {
+  display: none;
+
+  @include tablet {
+    display: initial;
+  }
+
+  &__bg {
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+      background-color: $color-background-light;
+      padding: 0.5rem 0;
+    }
+  }
+  &__info-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 1rem;
+
+    @include tablet {
+      padding: 0;
+      width: 87.5%;
+    }
+  }
+
+  &__sec {
+    width: 50%;
+
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      justify-content: space-evenly;
+    }
+  }
+
+  &__sec-sub {
+    @include tablet {
+      width: 42%;
+    }
+  }
+
+  &__hdr {
+    margin: 0;
+    color: $color-placeholder-table-text;
+    font-weight: 600;
+    font-size: 0.6875rem;
+    line-height: 1rem;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__bdy {
+    margin: 0;
+    color: $color-placeholder-table-text;
+    font-size: 0.6875rem;
+    line-height: 1rem;
+    margin: 0.5rem 0 1rem 0;
+
+    @include tablet {
+      margin: 0;
+    }
+  }
+
+  &__icon-hdr {
+    margin: 0;
+    color: $color-placeholder-table-text;
+    font-size: 0.6875rem;
+    line-height: 1rem;
+
+    @include tablet {
+      border-bottom: none;
+      width: 10%;
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
+  @include tablet {
+    justify-content: flex-end;
+  }
+}

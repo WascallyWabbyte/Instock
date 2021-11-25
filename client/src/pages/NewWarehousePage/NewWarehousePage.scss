@@ -1,0 +1,8 @@
+@import '../../styles/partials/mixins';
+@import '../../styles/partials/colors';
+@import '../../styles/partials/typography';
+
+
+.add-warehouse {
+  @include default_page_style;
+}

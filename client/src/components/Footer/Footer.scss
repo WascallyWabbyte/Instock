@@ -1,0 +1,36 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/global' as *;
+
+.footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: $color-background-light;
+    position: absolute;
+    height: 100%;
+    bottom: 0;
+    z-index: -1;
+
+    @include tablet {
+        bottom: -100px;
+    }
+    @include desktop{
+        bottom: 0;
+    }
+
+    &__content-wrapper {
+        text-align: center;
+        align-self: flex-end;
+        margin-bottom: 3rem;
+        color: $color-placeholder-table-text;
+        @include tablet {
+            margin-bottom: 0;
+        }
+        @include desktop{
+            margin-bottom: 3rem;
+        }
+    
+    }
+}

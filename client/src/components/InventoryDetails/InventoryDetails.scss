@@ -1,0 +1,47 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/colors' as *;
+
+.inventory{
+    @include MP2;
+    @include tablet {
+        @include P2;
+    }
+
+    &__info {
+        padding: 16px 24px 24px;
+        @include tablet {
+            display: flex;
+            gap: 16px;
+        }
+    }
+    &__description{
+        @include tablet {
+            width: 50%;
+            border-right: 1px solid $color-borders-diverders;
+            padding-right: 16px;
+        }
+    }
+    &__stock-details {
+        display: flex;
+        flex-wrap: wrap;
+        @include tablet {
+            flex-grow: 2;
+        }
+    }
+    &__stock-details-section {
+        width: 45%;
+        @include tablet {
+            padding-left: 16px;
+        }
+    }
+    &__status {
+        &--instock{
+            @include tag-instock;
+            width: fit-content;
+        }
+        &--outstock {
+            @include tag-out-of-stock;
+            width: fit-content;
+        }
+    }
+}
